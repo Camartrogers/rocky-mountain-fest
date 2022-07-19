@@ -1,0 +1,36 @@
+.home-artists {
+    margin: 4rem auto 2rem auto;
+    display: grid;
+    justify-content: center;
+    gap: 1rem;
+
+    @include mq($tabletWide){
+        // display: grid;
+        grid-template-columns: 1fr 1fr;
+        // gap: 1rem;
+
+        article:first-of-type {
+            grid-column: span 2;
+        }
+    
+    }
+
+    @include mq($desktop){
+        grid-template-columns: 1fr 1fr 1fr;
+
+        article:first-of-type {
+            grid-column: span 1;
+        }
+    
+    }
+
+.artist-card {
+    padding: 1rem 2rem;
+    background-color: $offWhite;
+    border: 2px solid $darkGreen;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 5px $black-50;
+
+}
+
+}

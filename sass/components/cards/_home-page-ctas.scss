@@ -1,0 +1,89 @@
+// Home CTA (Camping, Workshops)
+
+.home-cards {
+    display: grid;
+    justify-content: center;
+    gap: 2rem;
+
+    article {
+        display: grid;
+        justify-content: center;
+        border: 2px solid $darkGreen;
+        border-radius: 1rem;
+        overflow: hidden;
+
+        #home-card-cta-text {
+            padding: 2rem .5rem;
+            background-color: $darkGreen-75;
+
+            p, h2, h3, h4 {
+                color: $offWhite;
+                margin-top: 0;
+            }
+        a {
+            color: $offWhite;
+            background-color: $darkGreen;
+            padding: .5rem 1rem;
+        }
+        }
+
+         @include mq($tabletWide){
+            grid-template-columns: 1fr 1fr;
+        
+        }
+    }
+    @include mq($desktopWide){
+        grid-template-columns: 1fr 1fr;
+    
+    }
+}
+// Vendor
+
+.home-vendor {
+    margin-top: 4rem;
+
+    h3, h4 {
+        margin: 0.5rem 0rem;
+    }
+
+    #vendor-content-wrapper {
+        border: 2px solid $darkBlue;
+    }
+
+    #vendor-text {
+        padding: 0 2rem;
+    }
+
+    @include mq($tabletWide){
+       
+    
+
+    #vendor-content-wrapper {
+    display: grid;
+    padding: 1rem 2rem;
+    #vendor-text {
+        grid-area: content;
+
+    }
+    #vendor-image {
+        grid-area: image;
+    }
+
+    grid-template-areas: 
+    "image content content";
+}
+    
+}
+
+    #vendor-ctas-wrapper {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+
+        a {
+            margin: 1rem;
+        }
+    }
+}

@@ -1,0 +1,161 @@
+.single-product {
+  div.product {
+    position: relative;
+
+    .woocommerce-product-gallery {
+      position: relative;
+      float: left;
+
+      .woocommerce-product-gallery__trigger {
+        position: absolute;
+        top: 2em;
+        right: 1em;
+        display: block;
+        z-index: 99;
+      }
+
+      .flex-viewport {
+        margin-bottom: 1em;
+      }
+
+      .flex-control-thumbs {
+        margin: 0;
+        padding: 0;
+
+        li {
+          list-style: none;
+          cursor: pointer;
+          float: left;
+
+          img {
+            opacity: 0.5;
+
+            &.flex-active {
+              opacity: 1;
+            }
+          }
+
+          &:hover {
+            img {
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      @for $i from 2 through 5 {
+        &.woocommerce-product-gallery--columns-#{$i} {
+          .flex-control-thumbs {
+            li {
+              // @include column-width($i);
+
+              &:nth-child(#{$i}n) {
+                margin-right: 0;
+              }
+
+              &:nth-child(#{$i}n + 1) {
+                clear: both;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.stock {
+  &:empty::before {
+    display: none;
+  }
+
+  &.in-stock {
+    color: $woocommerce__color-success;
+  }
+
+  &.out-of-stock {
+    color: $woocommerce__color-error;
+  }
+}
+/// End of _s CSS
+//////////////////////
+
+.single-product {
+  main::before {
+    content: "";
+    background: url("images/mountains-and-trees-green.svg") top center repeat-x;
+    background-color: $skyBlue;
+    height: 9rem;
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    bottom: -0.125rem;
+  }
+
+  .product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $offWhite;
+    border: 3px solid $lightGreen;
+    border-radius: 27px;
+    box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
+      -3px -3px 10px 1px rgba(0, 0, 0, 35%);
+    color: $darkBlue;
+    max-width: 42.5rem;
+    margin: 15rem 1rem 1rem 1rem;
+    @media (min-width: 33.75rem) {
+      width: 80%;
+      margin: 15rem auto 1rem;
+    }
+    .summary.entry-summary {
+      h1 {
+        color: $darkBlue;
+        text-align: center;
+        font-size: 1.5rem;
+      }
+      .price {
+        font-size: 2rem;
+        margin-bottom: 0;
+        margin-left: 2rem;
+      }
+    }
+    form.cart {
+      display: flex;
+      justify-content: space-around;
+      input {
+        font-family: Arial, Helvetica, sans-serif;
+        width: 3rem;
+      }
+      button {
+        border: 3px solid $darkBlue;
+        border-radius: 27px;
+        box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
+          -3px -3px 10px 1px rgba(0, 0, 0, 35%);
+        margin-bottom: 1rem;
+        cursor: pointer;
+      }
+    }
+    .woocommerce-product-details__short-description {
+      padding: 0 1rem;
+    }
+    .woocommerce-tabs,
+    .product_meta,
+    .related.products {
+      display: none;
+    }
+  }
+}
+.woocommerce-message {
+  background-color: $offWhite !important;
+  padding: 1rem;
+  color: $darkBlue;
+  font-size: 1.25rem;
+  a {
+    color: $darkBlue;
+  }
+}
+.woocommerce-notices-wrapper {
+  margin-bottom: 0.5rem;
+}

@@ -1,0 +1,119 @@
+.site-footer {
+    margin-top: 10rem;
+
+    .footer {
+        background-color: $darkGreen;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+        .footer-wrapper {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: space-evenly;
+            width: 90%;
+            width: 20rem;
+            margin: 0 auto;
+            padding: 1rem;
+            @media (min-width: 39.5rem) {
+                flex-direction: row;
+                width: auto;
+                max-width: 81.25rem;
+            }
+            h2 {
+                font-size: 1.75rem;
+                color: $offWhite;
+                margin: 0;
+                line-height: 1em;
+            }
+
+            p {
+                font-weight: bold;
+                font-size: 1.125em;
+                color: $offWhite;
+            }
+            a {
+                font-weight: bold;
+                font-size: 1.5em;
+                color: $offWhite;
+            }
+            article {
+                margin: 2em auto;
+                width: 12.7rem;
+            }
+        }
+
+        article.important-links {
+            .footer-navigation {
+                margin-top: 1.5rem;
+            }
+        }
+        
+        .important-links::before {
+            content: '';
+            display: block;
+            width: 80%;
+            height: 0.0625rem;
+            background-color: $offWhite-50;
+            margin: 0 auto 3rem auto;
+            @media (min-width: 39.5rem) {
+                display: none;
+            }
+        }
+        article.social-links {
+            .social-navigation .menu-social-container .menu {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                width: 100%;
+                li {
+                    margin: 2rem 3.25rem 0 0;
+                }
+            }
+        }
+        .newsletter-updates {
+            max-width: 16.875rem;
+            p {
+                margin-bottom: .25rem;
+            }
+            form {
+                p {
+                    margin: .25em 0;
+                }
+                input {
+                    width: 200px;
+                    background-color: $offWhite-50;
+                    &.wpcf7-submit {
+                        font-family: $font_headers;
+                        font-size: 1rem;
+                        text-align: center;
+                        color: $darkGreen;
+                        background-color: $offWhite;
+                        margin-top: .5rem;
+                    }
+                }
+            }
+        }
+        article.legal-links {
+            margin: 0;
+            padding-bottom: 2rem;
+            display: inline-flex;
+            nav div ul {
+                display: flex;
+                flex-direction: row;
+                li {
+                    margin-right: 0.75rem;
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}
+
+
+// Vendors Page Footer
+// .home .site-footer {
+//     margin-top: -7rem;
+// }
+
+@import 'featured-vendors'
